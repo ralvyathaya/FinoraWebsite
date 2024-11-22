@@ -1,15 +1,17 @@
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 import Logo from '../assets/logo.svg';
+import Button from './button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Features', href: '#features' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', to: 'home' },
+    { name: 'About', to: 'about' },
+    { name: 'Features', to: 'features' },
+    { name: 'Pricing', to: 'pricing' },
+    // { name: 'Contact', to: 'contact' },
   ];
 
   const toggleMenu = () => {
@@ -22,7 +24,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center">
           <img 
-            src= {Logo} 
+            src={Logo} 
             alt="test" 
             className="w-24 h-24 object-contain"
           />
@@ -32,20 +34,25 @@ const Header = () => {
         {/* Navigation for Desktop */}
         <nav className="hidden md:flex space-x-8 items-center">
           {navItems.map((item) => (
-            <a 
+            <Link 
               key={item.name}
-              href={item.href}
-              className="text-n-8 hover:text-brand-primary transition-colors duration-300 font-medium"
+              to={item.to}
+              smooth={true}
+              duration={500}
+              className="text-n-8 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact"
-            className="button px-4 py-2 bg-brand-primary text-white rounded-md hover:bg-brand-secondary transition-colors"
+          <Link 
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
+            className="button px-4 py-2 bg-brand-primary text-white rounded-md hover:bg-brand-secondary transition-colors cursor-pointer"
           >
             Get Started
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -93,22 +100,23 @@ const Header = () => {
           <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
             <div className="flex flex-col items-center py-4 space-y-4">
               {navItems.map((item) => (
-                <a 
+                <Link 
                   key={item.name}
-                  href={item.href}
-                  className="text-n-6 hover:text-brand-primary transition-colors duration-300 font-medium"
+                  to={item.to}
+                  smooth={true}
+                  duration={500}
+                  className="text-n-6 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
                   onClick={toggleMenu}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
-              <a 
-                href="#contact"
-                className="button px-4 py-2 bg-brand-primary text-white rounded-md hover:bg-brand-secondary transition-colors"
-                onClick={toggleMenu}
+             <Button
+              className="text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6 text-white bg-[#FC4A1A] hover:bg-[#e04016]"
+              onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
               >
-                Get Started
-              </a>
+              Get Started
+            </Button>
             </div>
           </div>
         )}

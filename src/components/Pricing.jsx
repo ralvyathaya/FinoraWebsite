@@ -1,9 +1,10 @@
 import Button from './button';
 import { FaCheckCircle } from 'react-icons/fa';
-
+import Section from './Section';
 
 const Pricing = () => {
   return (
+    <Section id="pricing">
     <div className="w-full py-16 px-4">
       <div className="max-w-[1240px] mx-auto">
         {/* Heading Section */}
@@ -83,6 +84,7 @@ const Pricing = () => {
         </div>
       </div>
     </div>
+    </Section>
   );
 };
 

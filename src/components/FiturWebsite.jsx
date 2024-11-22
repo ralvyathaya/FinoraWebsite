@@ -3,7 +3,7 @@ import Section from './Section'
 import Device from "../assets/images/device.png"
 const FiturWebsite = () => {
   return (
-    <Section className="py-16 px-4 max-w-7xl mx-auto">
+    <Section id="features" className="py-16 px-4 max-w-7xl mx-auto">
       {/* Top Section - Two Columns */}
       <div className="grid md:grid-cols-2 gap-8 mb-16">
         <div className="order-2 md:order-1">

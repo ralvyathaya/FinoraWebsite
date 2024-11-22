@@ -37,7 +37,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <Section customPaddings="pb-12">
+    <Section id="about" customPaddings="pb-12">
     <div className="container mx-auto px-4 py-16 md:py-24">
       {/* Heading Section */}
       <div className="max-w-4xl mx-auto mb-16 text-center">

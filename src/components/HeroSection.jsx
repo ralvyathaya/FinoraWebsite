@@ -4,7 +4,7 @@ import Hero from "../assets/images/hero.png"
 
 const HeroSection = () => {
   return (
-    <Section>
+    <Section id="home">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4 py-16 md:py-20 lg:py-24">
       {/* Image - Responsive sizing */}
       <div className="w-full md:w-1/2 mb-8 md:mb-0 md:pr-12">
