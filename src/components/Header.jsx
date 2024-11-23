@@ -26,9 +26,9 @@ const Header = () => {
           <img 
             src={Logo} 
             alt="Finora Labs Logo" 
-            className="w-12 h-12 md:w-24 md:h-24 object-contain" 
+            className="w-12 h-12 md:w-20 md:h-20 object-contain" 
           />
-          <h1 className="text-xl md:text-3xl font-bold">Finora Labs</h1>
+          <h1 className="text-xl md:text-2xl font-bold">Finora Labs</h1>
         </div>
 
         {/* Navigation for Desktop */}

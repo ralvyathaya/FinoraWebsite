@@ -1,14 +1,17 @@
 import Section from "./Section";
 import LogoA from '../assets/logo.svg';
 import LogoB from '../assets/images/inamikro.png';
+import LogoC from '../assets/images/semesta.png';
+import LogoD from '../assets/images/Logo_UNS.png';
+
 
 const SupportedBy = () => {
   // Array of company logos (replace with actual paths)
   const companies = [
     { name: 'Finora Labs', logo: LogoA },
     { name: 'InaMikro', logo: LogoB },
-    { name: 'Finora Labs', logo: LogoA },
-    { name: 'InaMikro', logo: LogoB },
+    { name: 'Semesta Wirausaha Merdeka UNS', logo: LogoC },
+    { name: 'Universitas Sebelas Maret', logo: LogoD },
     { name: 'Finora Labs', logo: LogoA },
     { name: 'InaMikro', logo: LogoB }
   ];
@@ -35,7 +38,7 @@ const SupportedBy = () => {
                 alt={`${company.name} logo`}
                 className={`
                   max-w-full max-h-full object-contain 
-                  grayscale md:hover:grayscale-0 opacity-70 hover:opacity-100 
+                  md:hover:grayscale-0 opacity-70 hover:opacity-100 
                   transition-all
                   ${index % 2 === 0 ? 'md:translate-y-8' : 'md:-translate-y-8'}
                 `}

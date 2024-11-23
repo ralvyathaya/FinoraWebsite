@@ -1,4 +1,5 @@
 import Logo from '../assets/logo.svg';
+import LogoB from '../assets/images/inamikro.png';
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
 
 const Footer = () => {
@@ -81,14 +82,36 @@ const Footer = () => {
 
         {/* Center Logo */}
         <div className="flex flex-col items-center">
-          <img 
-            src={Logo}
-            alt="Company Logo" 
-            className="w-24 h-24 object-contain mb-8"
-          />
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+              {/* Company Logo */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={Logo} 
+                  alt="Company Logo" 
+                  className="w-24 h-24 object-contain"
+                />
+              </div>
+              
+              {/* Border */}
+              <div className="border-l-2 border-gray-300 h-16 mx-4"></div>
+              
+              {/* Partner Logo */}
+              <div className="flex-shrink-0">
+                <img 
+                  src={LogoB} 
+                  alt="Partner Logo" 
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+            </div>
+
+            <p className="mt-4 text-center text-[12px] text-gray-500 max-w-[calc(6rem+6rem+3rem)]">
+              Proudly partnering with PT Mikrobisnis Digital Sejahtera.
+            </p>
+ 
 
           {/* Social Icons */}
-          <div className="flex space-x-6 mb-8">
+          <div className="flex space-x-6 mt-8 mb-8">
             {socialLinks.map(social => {
               const Icon = social.icon;
               return (
@@ -107,7 +130,7 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <p className="text-lg font-bold text-n-6">
+          <p className="text-sm md:text-[16px] font-bold text-n-6">
           &#169;Copyright 2024 <span className="text-brand-primary">Finora Labs</span>
           </p>
         </div>
