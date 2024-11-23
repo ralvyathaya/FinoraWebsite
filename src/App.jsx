@@ -4,7 +4,6 @@ import HeroSection from "./components/HeroSection";
 import SupportedBy from "./components/SupportedBy";
 import FiturWebsite from "./components/FiturWebsite";
 import FiturEdukasi from "./components/FiturEdukasi";
-import CustomerReview from "./components/CustomerReview";
 import Footer from "./components/Footer";
 import ComingSoonPage from "./components/ComingSoon";
 import Pricing from "./components/Pricing";
@@ -18,7 +17,9 @@ const App = () => {
       <About />
       <FiturWebsite />
       <FiturEdukasi />
-      <CustomerReview />
+
+      {/*Customer Review*/}
+
       <Pricing />
       <ComingSoonPage />
       <Footer />

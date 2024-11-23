@@ -82,13 +82,13 @@ const Footer = () => {
 
         {/* Center Logo */}
         <div className="flex flex-col items-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+          <div className="flex flex-row sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
               {/* Company Logo */}
               <div className="flex-shrink-0">
                 <img 
                   src={Logo} 
                   alt="Company Logo" 
-                  className="w-24 h-24 object-contain"
+                  className="w-20 h-20 md:w-24 md:h-24 object-contain"
                 />
               </div>
               
@@ -100,7 +100,7 @@ const Footer = () => {
                 <img 
                   src={LogoB} 
                   alt="Partner Logo" 
-                  className="w-16 h-16 object-contain"
+                  className="w-14 h-14 md:w-16 md:h-16 object-contain"
                 />
               </div>
             </div>

@@ -5,7 +5,7 @@ import Section from './Section';
 const Pricing = () => {
   return (
     <Section id="pricing">
-    <div className="w-full py-16 px-4">
+    <div className="w-full py-4 px-4">
       <div className="max-w-[1240px] mx-auto">
         {/* Heading Section */}
         <div className="text-center mb-12">
