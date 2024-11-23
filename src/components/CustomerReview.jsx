@@ -1,16 +1,24 @@
-import { useState } from 'react';
-import { StarIcon as SolidStarIcon, StarIcon as OutlineStarIcon } from '@heroicons/react/24/solid';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { useState } from "react";
+import { 
+  StarIcon as SolidStarIcon, 
+  StarIcon as OutlineStarIcon 
+} from "@heroicons/react/24/solid";
+import { 
+  ChevronLeftIcon, 
+  ChevronRightIcon 
+} from "@heroicons/react/24/outline";
+import ProfilePlaceholder from "../assets/images/profile-placeholder.png"; // Placeholder Profile Icon
 
 const CustomerReview = () => {
-  const [currentSlide, setCurrentSlide] = useState(1);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [startX, setStartX] = useState(null);
 
   const reviews = [
     {
       id: 1,
       name: "Sarah Johnson",
       title: "Pemilik Toko Kue di Jakarta",
-      image: "/path-to-image1.jpg",
+      image: ProfilePlaceholder,
       rating: 5,
       headingText: "Kualitas Produk Luar Biasa!",
       reviewText: "Saya sangat puas dengan produk Finora. Kualitasnya konsisten dan pelayanannya sangat profesional.",
@@ -19,7 +27,7 @@ const CustomerReview = () => {
       id: 2,
       name: "Ahmad Rizki",
       title: "Pengusaha Katering di Bandung",
-      image: "/path-to-image2.jpg",
+      image: ProfilePlaceholder,
       rating: 4.5,
       headingText: "Pelayanan Terbaik",
       reviewText: "Tim Finora sangat responsif dan membantu. Mereka selalu memberikan solusi terbaik untuk bisnis saya.",
@@ -28,7 +36,7 @@ const CustomerReview = () => {
       id: 3,
       name: "Linda Wijaya",
       title: "Pemilik Restoran di Surabaya",
-      image: "/path-to-image3.jpg",
+      image: ProfilePlaceholder,
       rating: 4,
       headingText: "Rekomendasi Terpercaya",
       reviewText: "Finora adalah partner terpercaya untuk bisnis kuliner. Sangat merekomendasikan!",
@@ -53,27 +61,42 @@ const CustomerReview = () => {
     return stars;
   };
 
+  // Swipe Handlers
+  const handleTouchStart = (e) => setStartX(e.touches[0].clientX);
+  const handleTouchMove = (e) => {
+    if (!startX) return;
+    const endX = e.touches[0].clientX;
+    const deltaX = startX - endX;
+
+    if (deltaX > 50) {
+      setCurrentSlide((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+      setStartX(null);
+    } else if (deltaX < -50) {
+      setCurrentSlide((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+      setStartX(null);
+    }
+  };
+
   return (
     <div className="container mx-auto px-4 py-12">
       <h2 className="text-4xl font-bold text-center mb-12">
         Review dari Pelanggan Finora
       </h2>
 
-      <div className="relative">
+      <div
+        className="relative"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
         <div className="grid md:flex justify-center items-center gap-4 overflow-hidden">
           {reviews.map((review, index) => (
             <div
               key={review.id}
-              onClick={() => setCurrentSlide(index)}
-              className={`bg-white rounded-lg shadow-lg p-6 transition-all duration-500 cursor-pointer
-                ${currentSlide === index ? 'scale-105 z-10' : 'scale-90 opacity-70'}
-                ${currentSlide === index ? 'w-96' : 'w-80'}
+              className={`bg-white rounded-lg shadow-lg p-6 transition-all duration-500
+                ${currentSlide === index ? "scale-105 z-10" : "scale-90 opacity-70"}
+                ${currentSlide === index ? "w-96" : "w-80"}
                 transform
-                ${index !== currentSlide ? 'hidden md:block' : ''}
-                md:translate-x-0
-                ${index < currentSlide ? '-translate-x-full' : ''}
-                ${index > currentSlide ? 'translate-x-full' : ''}
-                ${currentSlide === index ? 'translate-x-0' : ''}`}
+                ${index !== currentSlide ? "hidden md:block" : ""}`}
             >
               <div className="flex items-center gap-4 mb-4">
                 <img
@@ -87,10 +110,7 @@ const CustomerReview = () => {
                 </div>
               </div>
 
-              <div className="flex gap-1 mb-4">
-                {renderStars(review.rating)}
-              </div>
-
+              <div className="flex gap-1 mb-4">{renderStars(review.rating)}</div>
               <h4 className="font-bold text-xl mb-2">{review.headingText}</h4>
               <p className="text-base text-gray-700">{review.reviewText}</p>
             </div>
@@ -102,21 +122,22 @@ const CustomerReview = () => {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all
-                ${currentSlide === index ? 'bg-blue-600 w-6' : 'bg-gray-300'}`}
+              className={`w-3 h-3 rounded-full transition-all ${
+                currentSlide === index ? "bg-blue-600 w-6" : "bg-gray-300"
+              }`}
             />
           ))}
         </div>
 
         <button
           onClick={() => setCurrentSlide((prev) => (prev === 0 ? reviews.length - 1 : prev - 1))}
-          className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg z-10 md:left-4"
         >
           <ChevronLeftIcon className="h-6 w-6" />
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev === reviews.length - 1 ? 0 : prev + 1))}
-          className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg z-10 md:right-4"
         >
           <ChevronRightIcon className="h-6 w-6" />
         </button>
