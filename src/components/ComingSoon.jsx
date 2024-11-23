@@ -34,9 +34,16 @@ const ComingSoonPage = () => {
               untuk mendorong UMKM Anda melaju lebih cepat.
             </p>
 
-            <Button className="bg-brand-primary h-12 md:h-16 px-12 md:px-24 text-base md:text-lg rounded-[30px]" href="">
-              Lihat Lebih Lanjut
-            </Button>
+            <Button 
+                className="bg-brand-primary h-12 md:h-16 px-12 md:px-24 text-base md:text-lg rounded-[30px] 
+                            hover:shadow-lg hover:shadow-white/50 
+                            hover:text-white 
+                            focus:outline-none transition-all duration-300"
+                href=""
+                >
+                Lihat Lebih Lanjut
+                </Button>
+
           </div>
         </div>
       </div>
