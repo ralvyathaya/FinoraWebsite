@@ -88,34 +88,36 @@ const CustomerReview = () => {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
       >
-        <div className="grid md:flex justify-center items-center gap-4 overflow-hidden">
-          {reviews.map((review, index) => (
-            <div
-              key={review.id}
-              className={`bg-white rounded-lg shadow-lg p-6 transition-all duration-500
-                ${currentSlide === index ? "scale-105 z-10" : "scale-90 opacity-70"}
-                ${currentSlide === index ? "w-96" : "w-80"}
-                transform
-                ${index !== currentSlide ? "hidden md:block" : ""}`}
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <img
-                  src={review.image}
-                  alt={review.name}
-                  className="w-[72px] h-[72px] rounded-full object-cover"
-                />
-                <div>
-                  <h3 className="font-semibold">{review.name}</h3>
-                  <p className="text-sm text-gray-600">{review.title}</p>
-                </div>
-              </div>
-
-              <div className="flex gap-1 mb-4">{renderStars(review.rating)}</div>
-              <h4 className="font-bold text-xl mb-2">{review.headingText}</h4>
-              <p className="text-base text-gray-700">{review.reviewText}</p>
-            </div>
-          ))}
+       <div className="grid md:flex justify-center items-center gap-4 overflow-hidden">
+  {reviews.map((review, index) => (
+    <div
+      key={review.id}
+      onClick={() => setCurrentSlide(index)} // Add click handler
+      className={`bg-white rounded-lg shadow-lg p-6 cursor-pointer transition-all duration-500
+        ${currentSlide === index ? "scale-105 z-10" : "scale-90 opacity-70"}
+        ${currentSlide === index ? "w-96" : "w-80"}
+        transform
+        ${index !== currentSlide ? "hidden md:block" : ""}`}
+    >
+      <div className="flex items-center gap-4 mb-4">
+        <img
+          src={review.image}
+          alt={review.name}
+          className="w-[72px] h-[72px] rounded-full object-cover"
+        />
+        <div>
+          <h3 className="font-semibold">{review.name}</h3>
+          <p className="text-sm text-gray-600">{review.title}</p>
         </div>
+      </div>
+
+      <div className="flex gap-1 mb-4">{renderStars(review.rating)}</div>
+      <h4 className="font-bold text-xl mb-2">{review.headingText}</h4>
+      <p className="text-base text-gray-700">{review.reviewText}</p>
+    </div>
+  ))}
+</div>
+
 
         <div className="flex justify-center gap-4 mt-8">
           {reviews.map((_, index) => (

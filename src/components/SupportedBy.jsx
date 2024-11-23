@@ -2,7 +2,6 @@ import Section from "./Section";
 import LogoA from '../assets/logo.svg';
 import LogoB from '../assets/images/inamikro.png';
 
-
 const SupportedBy = () => {
   // Array of company logos (replace with actual paths)
   const companies = [
@@ -16,8 +15,8 @@ const SupportedBy = () => {
 
   return (
     <Section customPaddings="pt-8 pb-12">
-      <div className="container mx-auto px-4 ">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-n-12 mb-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-n-12 mb-16">
           Supported By
         </h2>
         
@@ -27,21 +26,26 @@ const SupportedBy = () => {
               key={company.name}
               className={`
                 w-[150px] h-[100px] flex items-center justify-center
-                ${index % 2 === 0 ? 'translate-y-8' : '-translate-y-8'}
+                ${index % 2 === 0 ? 'md:translate-y-8' : 'md:-translate-y-8'} 
                 transition-transform duration-300 hover:scale-105
               `}
             >
               <img 
                 src={company.logo} 
                 alt={`${company.name} logo`}
-                className="max-w-full max-h-full object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all"
+                className={`
+                  max-w-full max-h-full object-contain 
+                  grayscale md:hover:grayscale-0 opacity-70 hover:opacity-100 
+                  transition-all
+                  ${index % 2 === 0 ? 'md:translate-y-8' : 'md:-translate-y-8'}
+                `}
               />
             </div>
           ))}
         </div>
       </div>
     </Section>
-  );  
+  );
 };
 
 export default SupportedBy;

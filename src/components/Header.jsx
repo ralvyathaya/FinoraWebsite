@@ -25,10 +25,10 @@ const Header = () => {
         <div className="flex items-center">
           <img 
             src={Logo} 
-            alt="test" 
-            className="w-24 h-24 object-contain"
+            alt="Finora Labs Logo" 
+            className="w-12 h-12 md:w-24 md:h-24 object-contain" 
           />
-          <h1 className="text-3xl font-bold">Finora Labs</h1>
+          <h1 className="text-xl md:text-3xl font-bold">Finora Labs</h1>
         </div>
 
         {/* Navigation for Desktop */}
@@ -111,12 +111,12 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-             <Button
-              className="text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6 text-white bg-[#FC4A1A] hover:bg-[#e04016]"
-              onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
+              <Button
+                className="text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6 text-white bg-[#FC4A1A] hover:bg-[#e04016]"
+                onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
               >
-              Get Started
-            </Button>
+                Get Started
+              </Button>
             </div>
           </div>
         )}
