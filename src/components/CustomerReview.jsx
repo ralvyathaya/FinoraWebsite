@@ -60,13 +60,20 @@ const CustomerReview = () => {
       </h2>
 
       <div className="relative">
-        <div className="flex justify-center items-center gap-4">
+        <div className="grid md:flex justify-center items-center gap-4 overflow-hidden">
           {reviews.map((review, index) => (
             <div
               key={review.id}
-              className={`bg-white rounded-lg shadow-lg p-6 transition-all duration-300
+              onClick={() => setCurrentSlide(index)}
+              className={`bg-white rounded-lg shadow-lg p-6 transition-all duration-500 cursor-pointer
                 ${currentSlide === index ? 'scale-105 z-10' : 'scale-90 opacity-70'}
-                ${currentSlide === index ? 'w-96' : 'w-80'}`}
+                ${currentSlide === index ? 'w-96' : 'w-80'}
+                transform
+                ${index !== currentSlide ? 'hidden md:block' : ''}
+                md:translate-x-0
+                ${index < currentSlide ? '-translate-x-full' : ''}
+                ${index > currentSlide ? 'translate-x-full' : ''}
+                ${currentSlide === index ? 'translate-x-0' : ''}`}
             >
               <div className="flex items-center gap-4 mb-4">
                 <img
@@ -103,13 +110,13 @@ const CustomerReview = () => {
 
         <button
           onClick={() => setCurrentSlide((prev) => (prev === 0 ? reviews.length - 1 : prev - 1))}
-          className="absolute left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+          className="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
         >
           <ChevronLeftIcon className="h-6 w-6" />
         </button>
         <button
           onClick={() => setCurrentSlide((prev) => (prev === reviews.length - 1 ? 0 : prev + 1))}
-          className="absolute right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
+          className="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 bg-white rounded-full p-2 shadow-lg"
         >
           <ChevronRightIcon className="h-6 w-6" />
         </button>

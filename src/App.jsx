@@ -6,6 +6,7 @@ import FiturWebsite from "./components/FiturWebsite";
 import FiturEdukasi from "./components/FiturEdukasi";
 import CustomerReview from "./components/CustomerReview";
 import Footer from "./components/Footer";
+import ComingSoonPage from "./components/ComingSoon";
 import Pricing from "./components/Pricing";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <FiturEdukasi />
       <CustomerReview />
       <Pricing />
+      <ComingSoonPage />
       <Footer />
     </div>
   );
