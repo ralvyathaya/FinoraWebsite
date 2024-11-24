@@ -39,7 +39,7 @@ const ComingSoonPage = () => {
                             hover:shadow-lg hover:shadow-white/50 
                             hover:text-white 
                             focus:outline-none transition-all duration-300"
-                href=""
+                href="/app"
                 >
                 Lihat Lebih Lanjut
                 </Button>

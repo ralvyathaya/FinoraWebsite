@@ -12,6 +12,7 @@ const Header = () => {
     { name: 'Features', to: 'features' },
     { name: 'Pricing', to: 'pricing' },
     // { name: 'Contact', to: 'contact' },
+    { name: 'Finora App', to: 'app' },
   ];
 
   const toggleMenu = () => {
