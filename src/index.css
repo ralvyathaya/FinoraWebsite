@@ -23,6 +23,21 @@
   }
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: -200%;
+  }
+}
+
+@layer utilities {
+  .animate-gradient {
+    animation: gradient 8s linear infinite;
+  }
+}
+
 .rotate-45 {
   @apply rotate-[45deg];
 }

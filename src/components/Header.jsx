@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll'; // Alias for react-scroll
+import { Link as RouterLink } from 'react-router-dom'; // Alias for react-router-dom
 import Logo from '../assets/logo.svg';
 import Button from './button';
 
@@ -7,11 +8,16 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', to: 'home' },
-    { name: 'About', to: 'about' },
-    { name: 'Features', to: 'features' },
-    { name: 'Pricing', to: 'pricing' },
-    // { name: 'Contact', to: 'contact' },
+    { name: 'Home', to: 'home', type: 'scroll' },
+    { name: 'About', to: 'about', type: 'scroll' },
+    { name: 'Features', to: 'features', type: 'scroll' },
+    { name: 'Pricing', to: 'pricing', type: 'scroll' },
+    { 
+      name: 'Finora App', 
+      to: '/app', 
+      type: 'router',
+      className: 'bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 bg-clip-text text-transparent bg-[200%] hover:bg-[0%] animate-gradient transition-all duration-300'
+    },
   ];
 
   const toggleMenu = () => {
@@ -33,18 +39,28 @@ const Header = () => {
 
         {/* Navigation for Desktop */}
         <nav className="hidden md:flex space-x-8 items-center">
-          {navItems.map((item) => (
-            <Link 
-              key={item.name}
-              to={item.to}
-              smooth={true}
-              duration={500}
-              className="text-n-8 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
-            >
-              {item.name}
-            </Link>
-          ))}
-          <Link 
+          {navItems.map((item) =>
+            item.type === 'scroll' ? (
+              <ScrollLink 
+                key={item.name}
+                to={item.to}
+                smooth={true}
+                duration={500}
+                className="text-n-8 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
+              >
+                {item.name}
+              </ScrollLink>
+            ) : (
+              <RouterLink 
+                key={item.name}
+                to={item.to}
+                className={`text-n-8 transition-colors duration-300 font-medium cursor-pointer ${item.className || 'hover:text-brand-primary'}`}
+              >
+                {item.name}
+              </RouterLink>
+            )
+          )}
+          <ScrollLink 
             to="contact"
             smooth={true}
             duration={500}
@@ -52,7 +68,7 @@ const Header = () => {
             className="button px-4 py-2 bg-brand-primary text-white rounded-md hover:bg-brand-secondary transition-colors cursor-pointer"
           >
             Get Started
-          </Link>
+          </ScrollLink>
         </nav>
 
         {/* Mobile Menu Toggle */}
@@ -99,18 +115,29 @@ const Header = () => {
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
             <div className="flex flex-col items-center py-4 space-y-4">
-              {navItems.map((item) => (
-                <Link 
-                  key={item.name}
-                  to={item.to}
-                  smooth={true}
-                  duration={500}
-                  className="text-n-6 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navItems.map((item) =>
+                item.type === 'scroll' ? (
+                  <ScrollLink 
+                    key={item.name}
+                    to={item.to}
+                    smooth={true}
+                    duration={500}
+                    className="text-n-6 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
+                    onClick={toggleMenu}
+                  >
+                    {item.name}
+                  </ScrollLink>
+                ) : (
+                  <RouterLink 
+                    key={item.name}
+                    to={item.to}
+                    className="text-n-6 hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer"
+                    onClick={toggleMenu}
+                  >
+                    {item.name}
+                  </RouterLink>
+                )
+              )}
               <Button
                 className="text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6 text-white bg-[#FC4A1A] hover:bg-[#e04016]"
                 onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
@@ -126,3 +153,4 @@ const Header = () => {
 };
 
 export default Header;
+
