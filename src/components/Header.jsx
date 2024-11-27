@@ -64,7 +64,7 @@ const Header = () => {
             to="contact"
             smooth={true}
             duration={500}
-            onClick={() => window.open('https://wa.me/6289513912741?text=Ingin tahu lebih lanjut tentang fitur Finora Labs', '_blank')}
+            onClick={() => window.open('https://wa.me/62881082227649?text=Ingin tahu lebih lanjut tentang fitur Finora Labs', '_blank')}
             className="button px-4 py-2 bg-brand-primary text-white rounded-md hover:bg-brand-secondary transition-colors cursor-pointer"
           >
             Mulai Sekarang!
@@ -140,7 +140,7 @@ const Header = () => {
               )}
               <Button
                 className="text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6 text-white bg-[#FC4A1A] hover:bg-[#e04016]"
-                onClick={() => window.open('https://wa.me/6289513912741?text=Ingin tahu lebih lanjut tentang fitur Finora Labs', '_blank')}
+                onClick={() => window.open('https://wa.me/62881082227649?text=Ingin tahu lebih lanjut tentang fitur Finora Labs', '_blank')}
               >
                 Mulai Sekarang!
               </Button>
