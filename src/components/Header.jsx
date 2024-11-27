@@ -67,7 +67,7 @@ const Header = () => {
             onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
             className="button px-4 py-2 bg-brand-primary text-white rounded-md hover:bg-brand-secondary transition-colors cursor-pointer"
           >
-            Get Started
+            Mulai Sekarang!
           </ScrollLink>
         </nav>
 
@@ -142,7 +142,7 @@ const Header = () => {
                 className="text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6 text-white bg-[#FC4A1A] hover:bg-[#e04016]"
                 onClick={() => window.open('https://wa.me/6289513912741', '_blank')}
               >
-                Get Started
+                Mulai Sekarang!
               </Button>
             </div>
           </div>

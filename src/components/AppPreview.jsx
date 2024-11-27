@@ -4,15 +4,15 @@ import Button from "./button";
 
 const AppPreview = () => {
   return (
-    <Section>
-      <div className="min-h-screen bg-[#222] py-16 px-4">
+    <Section customPaddings="p-0">
+      <div className="min-h-screen bg-[#222] text-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Finora App Preview
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto">
               Discover how Finora App will revolutionize the way you manage your business finances
             </p>
           </div>
@@ -27,7 +27,7 @@ const AppPreview = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold mb-6">
                 Key Features
               </h2>
               <div className="space-y-4">
@@ -61,8 +61,8 @@ const AppPreview = () => {
 
 const FeatureItem = ({ title, children }) => (
   <div className="border-l-4 border-brand-primary pl-4">
-    <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-    <p className="text-gray-600">{children}</p>
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p>{children}</p>
   </div>
 );
 

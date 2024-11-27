@@ -28,12 +28,10 @@ const HomePage = () => (
 
 const App = () => {
   return (
-    <div className="overflow-hidden">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/app" element={<AppPreview />} />
       </Routes>
-    </div>
   );
 };
 
