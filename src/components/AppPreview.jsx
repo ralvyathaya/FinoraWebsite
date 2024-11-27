@@ -5,7 +5,7 @@ import Button from "./button";
 const AppPreview = () => {
   return (
     <Section>
-      <div className="min-h-screen bg-white py-16 px-4">
+      <div className="min-h-screen bg-[#222] py-16 px-4">
         <div className="max-w-7xl mx-auto">
           {/* Hero Section */}
           <div className="text-center mb-16">

@@ -16,7 +16,7 @@ const Header = () => {
       name: 'Finora App', 
       to: '/app', 
       type: 'router',
-      className: 'bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 bg-clip-text text-transparent bg-[200%] hover:bg-[0%] animate-gradient transition-all duration-300'
+      className: "bg-gradient-to-r from-purple-600 via-pink-500 to-orange-500 bg-clip-text text-transparent bg-[400%] animate-gradient-circular transition-all duration-100"
     },
   ];
 
@@ -54,7 +54,7 @@ const Header = () => {
               <RouterLink 
                 key={item.name}
                 to={item.to}
-                className={`text-n-8 transition-colors duration-300 font-medium cursor-pointer ${item.className || 'hover:text-brand-primary'}`}
+                className={`text-n-8 transition-colors duration-300 font-medium cursor-pointer ${item.className || 'hover:text-brand-primary'} `}
               >
                 {item.name}
               </RouterLink>

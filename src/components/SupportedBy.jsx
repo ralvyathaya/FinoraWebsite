@@ -12,8 +12,6 @@ const SupportedBy = () => {
     { name: 'InaMikro', logo: LogoB },
     { name: 'Semesta Wirausaha Merdeka UNS', logo: LogoC },
     { name: 'Universitas Sebelas Maret', logo: LogoD },
-    { name: 'Finora Labs', logo: LogoA },
-    { name: 'InaMikro', logo: LogoB }
   ];
 
   return (
@@ -23,28 +21,37 @@ const SupportedBy = () => {
           Supported By
         </h2>
         
-        <div className="flex pt-8 pb-12 flex-wrap justify-center items-center gap-8 md:gap-12">
-          {companies.map((company, index) => (
-            <div 
-              key={company.name}
-              className={`
-                w-[150px] h-[100px] flex items-center justify-center
-                ${index % 2 === 0 ? 'md:translate-y-8' : 'md:-translate-y-8'} 
-                transition-transform duration-300 hover:scale-105
-              `}
-            >
-              <img 
-                src={company.logo} 
-                alt={`${company.name} logo`}
-                className={`
-                  max-w-full max-h-full object-contain 
-                  md:hover:grayscale-0 opacity-70 hover:opacity-100 
-                  transition-all
-                  ${index % 2 === 0 ? 'md:translate-y-8' : 'md:-translate-y-8'}
-                `}
-              />
-            </div>
-          ))}
+        <div className="relative w-full overflow-hidden">
+          <div className="absolute left-0 top-0 w-[100px] h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-[100px] h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+          
+          <div className="flex gap-16 items-center animate-slide px-[100px]">
+            {companies.map((company) => (
+              <div 
+                key={company.name}
+                className="w-[180px] h-[120px] flex items-center justify-center flex-shrink-0"
+              >
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-all"
+                />
+              </div>
+            ))}
+            
+            {companies.map((company) => (
+              <div 
+                key={`${company.name}-duplicate`}
+                className="w-[180px] h-[120px] flex items-center justify-center flex-shrink-0"
+              >
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-all"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Section>
