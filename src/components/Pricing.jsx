@@ -3,12 +3,6 @@ import Button from './button';
 import { FaCheckCircle } from 'react-icons/fa';
 import Section from './Section';
 
-const messageEdu = "Saya tertarik dengan paket Edukasi ini. Bisa bantu prosesnya?";
-const messageWeb = "Saya tertarik dengan paket Website ini. Bisa bantu prosesnya?";
-
-const whatsappLinkEdu = `https://wa.me/62881082227649?text=${encodeURIComponent(messageEdu)}`;
-const whatsappLinkWeb = `https://wa.me/62881082227649?text=${encodeURIComponent(messageWeb)}`;
-
 const Pricing = () => {
   const [paymentPlan, setPaymentPlan] = useState('1 bulan');
 
@@ -21,6 +15,11 @@ const Pricing = () => {
 
   const handlePlanChange = (plan) => {
     setPaymentPlan(plan);
+  };
+
+  // Generate dynamic message based on plan and type
+  const generateMessage = (type) => {
+    return `Saya tertarik dengan paket ${type} selama ${paymentPlan} ini. Bisa bantu prosesnya?`;
   };
 
   return (
@@ -86,7 +85,7 @@ const Pricing = () => {
               <div className="mt-auto">
                 <Button
                   className="w-full text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6"
-                  onClick={() => window.open(whatsappLinkEdu, '_blank')}
+                  onClick={() => window.open(`https://wa.me/62881082227649?text=${encodeURIComponent(generateMessage('Edukasi'))}`, '_blank')}
                 >
                   <span>Hubungi Kami!</span>
                 </Button>
@@ -123,7 +122,7 @@ const Pricing = () => {
               <div className="mt-auto">
                 <Button
                   className="w-full text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6"
-                  onClick={() => window.open(whatsappLinkWeb, '_blank')}
+                  onClick={() => window.open(`https://wa.me/62881082227649?text=${encodeURIComponent(generateMessage('Website'))}`, '_blank')}
                 >
                   <span>Hubungi Kami!</span>
                 </Button>
