@@ -22,6 +22,11 @@ const Pricing = () => {
     return `Saya tertarik dengan paket ${type} selama ${paymentPlan} ini. Bisa bantu prosesnya?`;
   };
 
+  const handleContactClick = (type) => {
+    window.open(`https://wa.me/62881082227649?text=${encodeURIComponent(generateMessage(type))}`, '_blank');
+    window.location.href = '/thank-you'; // Redirect to Thank You page
+  };
+
   return (
     <Section id="pricing">
       <div className="w-full py-4 px-4">
@@ -85,7 +90,7 @@ const Pricing = () => {
               <div className="mt-auto">
                 <Button
                   className="w-full text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6"
-                  onClick={() => window.open(`https://wa.me/62881082227649?text=${encodeURIComponent(generateMessage('Edukasi'))}`, '_blank')}
+                  onClick={() => handleContactClick('Edukasi')}
                 >
                   <span>Hubungi Kami!</span>
                 </Button>
@@ -122,7 +127,7 @@ const Pricing = () => {
               <div className="mt-auto">
                 <Button
                   className="w-full text-lg rounded-[30px] font-bold inline-flex justify-center items-center gap-2 py-3 px-6"
-                  onClick={() => window.open(`https://wa.me/62881082227649?text=${encodeURIComponent(generateMessage('Website'))}`, '_blank')}
+                  onClick={() => handleContactClick('Website')}
                 >
                   <span>Hubungi Kami!</span>
                 </Button>

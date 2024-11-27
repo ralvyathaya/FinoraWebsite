@@ -10,6 +10,7 @@ import Footer from "./components/Footer";
 import ComingSoonPage from "./components/ComingSoon";
 import Pricing from "./components/Pricing";
 import AppPreview from "./components/AppPreview";
+import ThankYou from "./components/ThankYou";
 
 const HomePage = () => (
   <>
@@ -31,6 +32,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/app" element={<AppPreview />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
   );
 };
