@@ -7,7 +7,7 @@ import {
   ChevronLeftIcon, 
   ChevronRightIcon 
 } from "@heroicons/react/24/outline";
-import ProfilePlaceholder from "../assets/images/profile-placeholder.png";
+import ProfilePlaceholder from "../../../assets/images/profile-placeholder.png";
 
 const CustomerReview = () => {
   const [currentSlide, setCurrentSlide] = useState(0);

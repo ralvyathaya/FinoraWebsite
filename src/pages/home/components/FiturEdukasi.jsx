@@ -1,5 +1,5 @@
-import Edukasi from "../assets/images/Edukasi.png";
-import Section from "./Section";
+import Edukasi from "../../../assets/images/Edukasi.png";
+import Section from "../../../components/Section";
 
 const FiturEdukasi = () => {
   return (

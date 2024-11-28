@@ -1,6 +1,6 @@
 import { CheckCircleIcon } from '@heroicons/react/24/solid'
-import Section from './Section'
-import Device from "../assets/images/device.png"
+import Section from '../../../components/Section'
+import Device from "../../../assets/images/device.png"
 const FiturWebsite = () => {
   return (
     <Section id="features" className="py-16 px-4 max-w-7xl mx-auto">

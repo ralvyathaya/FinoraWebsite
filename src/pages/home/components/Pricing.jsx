@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Button from './button';
+import Button from '../../../components/button';
 import { FaCheckCircle } from 'react-icons/fa';
-import Section from './Section';
+import Section from '../../../components/Section';
 
 const Pricing = () => {
   const [paymentPlan, setPaymentPlan] = useState('1 bulan');

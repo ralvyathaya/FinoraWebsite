@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll'; // Alias for react-scroll
 import { Link as RouterLink } from 'react-router-dom'; // Alias for react-router-dom
-import Logo from '../assets/logo.svg';
-import Button from './button';
+import Logo from '../../../assets/logo.svg';
+import Button from '../../../components/button';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

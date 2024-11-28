@@ -1,15 +1,16 @@
 import { Link as ScrollLink } from 'react-scroll'; // Alias for react-scroll
 import { Link as RouterLink } from 'react-router-dom'; // Alias for react-router-dom
-import Logo from '../assets/logo.svg';
-import LogoB from '../assets/images/inamikro.png';
-import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from 'lucide-react';
+import Logo from '../../../assets/logo.svg';
+import LogoB from '../../../assets/images/inamikro.png';
+// Import FontAwesome icons
+import { FaInstagram, FaLinkedin, FaTwitter, FaTiktok } from 'react-icons/fa';
 
 const Footer = () => {
   const socialLinks = [
-    { name: 'Facebook', icon: FacebookIcon, url: '#' },
-    { name: 'LinkedIn', icon: LinkedinIcon, url: '#' },
-    { name: 'Instagram', icon: InstagramIcon, url: 'https://www.instagram.com/finoralabs/' },
-    { name: 'X', icon: TwitterIcon, url: '#' },
+    { name: 'TikTok', icon: FaTiktok, url: 'https://www.tiktok.com/@finoralabs?_t=ZS-8rl6mHdsT83&_r=1' }, // Updated TikTok icon
+    { name: 'LinkedIn', icon: FaLinkedin, url: 'https://www.linkedin.com/in/finora-labs-83322833b/' },
+    { name: 'Instagram', icon: FaInstagram, url: 'https://www.instagram.com/finoralabs/' },
+    { name: 'X/Twitter', icon: FaTwitter, url: 'https://x.com/finoralabs?s=11' }, // Updated to use FontAwesome Twitter icon
   ];
 
   return (

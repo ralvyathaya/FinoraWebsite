@@ -1,8 +1,8 @@
-import Section from "./Section";
-import PhoneImg from "../assets/images/phoneFull.png";
-import Button from "./button";
+import Section from "../../../components/Section";
+import PhoneImg from "../../../assets/images/phoneFull.png";
+import Button from "../../../components/button";
 
-const AppPreview = () => {
+const AppPreviewHeroSection = () => {
   return (
     <Section customPaddings="p-0">
       <div className="min-h-screen bg-[#222] text-white py-16 px-4">
@@ -66,4 +66,4 @@ const FeatureItem = ({ title, children }) => (
   </div>
 );
 
-export default AppPreview;
+export default AppPreviewHeroSection;

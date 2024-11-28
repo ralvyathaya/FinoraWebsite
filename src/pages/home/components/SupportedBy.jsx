@@ -1,8 +1,8 @@
-import Section from "./Section";
-import LogoA from '../assets/logo.svg';
-import LogoB from '../assets/images/inamikro.png';
-import LogoC from '../assets/images/semesta.png';
-import LogoD from '../assets/images/Logo_UNS.png';
+import Section from "../../../components/Section";
+import LogoA from '../../../assets/logo.svg';
+import LogoB from '../../../assets/images/inamikro.png';
+import LogoC from '../../../assets/images/semesta.png';
+import LogoD from '../../../assets/images/Logo_UNS.png';
 
 
 const SupportedBy = () => {

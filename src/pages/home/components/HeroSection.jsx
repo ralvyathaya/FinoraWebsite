@@ -1,6 +1,6 @@
-import Button from "./button"
-import Section from "./Section"
-import Hero from "../assets/images/hero.png"
+import Button from "../../../components/button"
+import Section from "../../../components/Section"
+import Hero from "../../../assets/images/hero.png"
 
 const HeroSection = () => {
   return (

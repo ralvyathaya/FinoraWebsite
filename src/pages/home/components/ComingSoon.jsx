@@ -1,6 +1,6 @@
-import Button from "./button"
-import PhoneImg from "../assets/images/phone.png"
-import Section from "./Section";
+import Button from "../../../components/button"
+import PhoneImg from "../../../assets/images/phone.png"
+import Section from "../../../components/Section";
 
 const ComingSoonPage = () => {
   return (
