@@ -24,48 +24,46 @@ const CashFlowFeatureSection = () => {
 
   return (
     <Section className="py-16 bg-[#222] text-white">
-    <div className="container mx-auto px-4 py-16">
-      <div className="flex flex-col md:flex-row items-center gap-12">
-        {/* Image Section */}
-        <div className="w-full md:w-1/2">
-          <img 
-            src={ArusKasImg || "/api/placeholder/600/400"} 
-            alt="Cash Flow Management" 
-            className="w-full h-auto rounded-lg shadow-lg object-cover"
-          />
-        </div>
-
-        {/* Content Section */}
-        <div className="w-full md:w-1/2">
-          {/* Heading */}
-          <h2 className="text-3xl md:text-4xl font-bold text-n-3 mb-8 leading-tight">
-            Kelola arus kas Anda dengan mudah melalui tiga komponen utama
-          </h2>
-
-          {/* Feature Cards */}
-          <div className="space-y-6">
-            {featureCards.map((card, index) => (
-              <div 
-                key={index} 
-                className="flex items-start p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                <div className="mr-4 mt-1">
-                  {card.icon}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold mb-2 text-n-3">
-                    {card.title}
-                  </h3>
-                  <p className="text-white">
-                    {card.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        {/* Top Section with Image and Heading */}
+        <div className="flex flex-col md:flex-row items-stretch gap-8 mb-12">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2 flex items-center">
+            <img
+              src={ArusKasImg || "/api/placeholder/600/400"}
+              alt="Cash Flow Management"
+              className="w-full h-auto rounded-lg shadow-lg object-cover"
+            />
+          </div>
+          {/* Heading Section */}
+          <div className="w-full md:w-1/2 flex items-center">
+            <h2 className="text-2xl md:text-3xl font-bold text-n-3 leading-tight self-center">
+              Kelola arus kas Anda dengan mudah melalui tiga komponen utama
+            </h2>
           </div>
         </div>
+        {/* Feature Cards Section */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {featureCards.map((card, index) => (
+            <div
+              key={index}
+              className="flex items-start p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-[#2C2C2C]"
+            >
+              <div className="mr-4 mt-1">
+                {card.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2 text-n-3">
+                  {card.title}
+                </h3>
+                <p className="text-n-4">
+                  {card.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </Section>
   );
 };

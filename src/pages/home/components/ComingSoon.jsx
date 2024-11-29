@@ -4,7 +4,7 @@ import Section from "../../../components/Section";
 
 const ComingSoonPage = () => {
   return (
-    <Section customPaddings="p-0">
+    <Section customPaddings="p-0 ">
       <div className="flex min-h-screen bg-[#222] text-white flex-col-reverse md:flex-row">
         {/* Image container - Reposition for mobile */}
         <div className="relative h-[50vh] md:h-auto md:w-1/2 bottom-0">
