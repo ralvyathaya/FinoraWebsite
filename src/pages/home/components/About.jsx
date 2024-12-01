@@ -31,7 +31,7 @@ const AboutSection = () => {
       image: Feature2
     },
     {
-      title: "Kurangnya Pemahaman Teknologi dan Laporan Keuangan",
+      title: "Kurangnya Pemahaman Teknologi untuk Pengembangan Bisnis",
       image: Feature3
     }
   ];
