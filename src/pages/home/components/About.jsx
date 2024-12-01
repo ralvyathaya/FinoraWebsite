@@ -1,6 +1,6 @@
 import Feature1 from '../../../assets/images/feature1.jpeg';
 import Feature2 from '../../../assets/images/feature2.jpeg';
-import Feature3 from '../../../assets/images/feature2.jpeg';
+import Feature3 from '../../../assets/images/feature3.jpeg';
 import Section from '../../../components/Section';
 
 const ProblemCard = ({ imagePath, title }) => {
