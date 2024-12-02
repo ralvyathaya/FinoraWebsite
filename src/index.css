@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -51,4 +51,13 @@
   .animate-gradient-circular {
     animation: gradient-circular 2s linear infinite;
   }
+}
+
+.bg-grain {
+  background-image: url("/path/to/grain-effect.png");
+  background-size: cover;
+}
+
+header {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
