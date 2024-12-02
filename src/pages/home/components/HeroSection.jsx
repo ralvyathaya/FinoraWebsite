@@ -87,8 +87,8 @@ const HeroSection = () => {
               alt={`Business Support Hero ${currentImageIndex + 1}`}
               className="w-full h-auto md:h-[600px] object-cover rounded-lg"
             />
-            <p className="text-center py-4 mt-2 text-n-13 font-code">
-            Dari para penjual di Pasar Gede, Solo
+            <p className="text-center text-lg py-4 mt-2 text-n-13 font-code">
+            Pasar Gede, Solo, Indonesia 🇮🇩
             </p>
           </motion.div>
         </div>
@@ -96,7 +96,7 @@ const HeroSection = () => {
         {/* Text Content */}
         <div className="w-full md:w-1/2 md:pl-12">
           <h1 className="text-3xl md:text-6xl font-bold text-n-12 mb-4 md:mb-6 leading-tight text-center md:text-left">
-            Teman Setia Usaha Anda
+            Teman Setia 🤝 Usaha Anda 
           </h1>
          
           <p className="text-base md:text-xl text-n-6 mb-6 md:mb-8 leading-relaxed text-center md:text-left">
