@@ -77,8 +77,9 @@ const HeroSection = () => {
           {/* Polaroid-style Image Container */}
           <motion.div 
             key={currentImageIndex}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.95, rotate: 2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 2 }}
+            whileHover={{ rotate: 0, scale: 1.02 }}
             transition={{ duration: 0.5 }}
             className="bg-white p-4 shadow-lg rounded-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
           >
