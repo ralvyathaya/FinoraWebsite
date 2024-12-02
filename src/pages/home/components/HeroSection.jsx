@@ -52,7 +52,7 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
           />
         </video>
-        <div className="absolute inset-0 bg-grain opacity-50" />
+        <div className="absolute inset-0 opacity-50" />
       </div>
 
       {/* Content Wrapper */}

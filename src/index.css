@@ -53,11 +53,6 @@
   }
 }
 
-.bg-grain {
-  background-image: url("/path/to/grain-effect.png");
-  background-size: cover;
-}
-
 header {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
