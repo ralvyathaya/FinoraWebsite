@@ -24,7 +24,10 @@ const Header = () => {
     };
   }, []);
 
-  const navClasses = isScrolled ? "bg-white shadow-sm" : "bg-transparent";
+  const navClasses = isScrolled
+    ? "bg-white shadow-sm"
+    : "bg-transparent md:bg-opacity-70 md:backdrop-blur-md";
+
   const textClasses = isScrolled ? "text-n-8" : "text-white"; // Change text color based on scroll state
   const buttonClasses = isScrolled ? "bg-brand-primary text-white" : "bg-white text-black";
 
@@ -112,7 +115,7 @@ const Header = () => {
 
         {/* Mobile Menu Dropdown */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden">
+          <div className="absolute top-full left-0 w-full bg-white bg-opacity-70 backdrop-blur-md shadow-lg md:hidden">
             <div className="flex flex-col items-center py-4 space-y-4">
               {navItems.map((item) =>
                 item.type === 'scroll' ? (
@@ -121,7 +124,7 @@ const Header = () => {
                     to={item.to}
                     smooth={true}
                     duration={500}
-                    className={`${textClasses} hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer`}
+                    className={` hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer`}
                     onClick={toggleMenu}
                   >
                     {item.name}
@@ -130,7 +133,7 @@ const Header = () => {
                   <RouterLink
                     key={item.name}
                     to={item.to}
-                    className={`${textClasses} hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer`}
+                    className={` hover:text-brand-primary transition-colors duration-300 font-medium cursor-pointer`}
                     onClick={toggleMenu}
                   >
                     {item.name}

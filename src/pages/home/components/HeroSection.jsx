@@ -10,8 +10,8 @@ import Hero3 from "../../../assets/images/UMKM4_11zon.jpg";
 import Hero4 from "../../../assets/images/UMKM5_11zon.jpg";
 import Hero5 from "../../../assets/images/UMKM6_11zon.jpg";
 
-// Import video
-import HeroVideo from "../../../assets/video/FinoraVideo.mp4";
+// Import video frame as fallback image
+import VideoFrame1 from "../../../assets/images/PasarGede.jpg";
 
 const HeroSection = () => {
   const heroImages = [Hero1, Hero2, Hero3, Hero4, Hero5];
@@ -41,16 +41,10 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          poster={heroImages[currentImageIndex]}
+          poster={VideoFrame1}
           className="w-full h-full object-cover filter brightness-75"
         >
-          <source src={HeroVideo} type="video/mp4" />
-          {/* Fallback image */}
-          <img
-            src={heroImages[currentImageIndex]}
-            alt="Fallback Hero Background"
-            className="w-full h-full object-cover"
-          />
+          <source src="/videos/FinoraVideo.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 opacity-50" />
       </div>
