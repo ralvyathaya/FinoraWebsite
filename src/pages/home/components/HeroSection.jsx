@@ -88,11 +88,13 @@ const HeroSection = () => {
             transition={{ duration: 0.5 }}
             className="bg-white p-4 shadow-lg rounded-lg transform rotate-2 hover:rotate-0 transition-transform duration-300"
           >
-            <img
-              src={heroImages[currentImageIndex]}
-              alt={`Business Support Hero ${currentImageIndex + 1}`}
-              className="w-full h-auto md:h-[600px] object-cover rounded-lg"
-            />
+            <div className="relative w-full pb-[75%] md:pb-[100%]">
+              <img
+                src={heroImages[currentImageIndex]}
+                alt={`Business Support Hero ${currentImageIndex + 1}`}
+                className="absolute inset-0 w-full h-full object-cover rounded-lg"
+              />
+            </div>
             <p className="text-center text-lg py-4 mt-2 text-n-13 font-code">
               Pasar Gede, Solo, Indonesia 🇮🇩
             </p>
