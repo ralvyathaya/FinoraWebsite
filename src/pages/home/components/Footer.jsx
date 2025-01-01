@@ -165,7 +165,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <p className="text-sm md:text-[16px] font-bold text-n-6">
-            &#169;Copyright 2024 <span className="text-brand-primary">Finora Labs</span>
+            &#169;Copyright 2025 <span className="text-brand-primary">Finora Labs</span>
           </p>
         </div>
       </div>
