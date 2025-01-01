@@ -7,6 +7,7 @@ import FiturEdukasi from "./components/FiturEdukasi";
 import Footer from "./components/Footer";
 import ComingSoonPage from "./components/ComingSoon";
 import Pricing from "./components/Pricing";
+import CustomerReview from "./components/CustomerReview";
 
 const HomePage = () => (
   <>
@@ -16,7 +17,7 @@ const HomePage = () => (
     <About />
     <FiturWebsite />
     <FiturEdukasi />
-    {/*Customer Review*/}
+    <CustomerReview />
     <Pricing />
     <ComingSoonPage />
     <Footer />
