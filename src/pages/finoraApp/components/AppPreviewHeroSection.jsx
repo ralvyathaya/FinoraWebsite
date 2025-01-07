@@ -5,9 +5,16 @@ import Button from "../../../components/button";
 const AppPreviewHeroSection = () => {
   return (
     <Section customPaddings="p-0">
-      <div className="min-h-screen bg-[#222] text-white py-16 px-4">
+      <div className="min-h-screen bg-[#222] text-white py-16 px-4 relative">
+        <div className="fixed top-8 right-8 z-50">
+          <Button
+            className="bg-brand-primary h-12 px-8 text-white rounded-full hover:bg-opacity-90"
+            href="/"
+          >
+            Back to Home
+          </Button>
+        </div>
         <div className="max-w-7xl mx-auto">
-          {/* Hero Section */}
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Finora App Preview
@@ -16,13 +23,11 @@ const AppPreviewHeroSection = () => {
               Discover how Finora App will revolutionize the way you manage your business finances
             </p>
           </div>
-
-          {/* App Features */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-16">
             <div>
-              <img 
-                src={PhoneImg} 
-                alt="Finora App Preview" 
+              <img
+                src={PhoneImg}
+                alt="Finora App Preview"
                 className="w-full max-w-md mx-auto"
               />
             </div>
@@ -42,16 +47,6 @@ const AppPreviewHeroSection = () => {
                 </FeatureItem>
               </div>
             </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="text-center">
-            <Button 
-              className="bg-brand-primary h-12 px-8 text-white rounded-full"
-              href="/"
-            >
-              Back to Home
-            </Button>
           </div>
         </div>
       </div>
