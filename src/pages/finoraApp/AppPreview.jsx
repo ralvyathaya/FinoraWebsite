@@ -17,7 +17,6 @@ const AppPreview = () => {
       <PreviewFeature3 />
       <PreviewFeature4 />
       <PreviewFeature5 />
-
       {/* Add more components or sections as needed */}
     </div>
   );
