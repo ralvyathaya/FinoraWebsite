@@ -20,10 +20,6 @@ The Finora Landing Page serves as the entry point for users to explore the featu
 
 To view the Finora Landing Page, ensure you have the necessary dependencies installed and run the application. The landing page is built using React and styled with Tailwind CSS for a modern look.
 
-## Contributing
-
-Contributions are welcome! Please submit a pull request or open an issue for any enhancements or bug fixes.
-
 ## License
 
 This project is licensed under the MIT License.
