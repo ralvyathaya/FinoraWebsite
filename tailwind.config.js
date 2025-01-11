@@ -94,9 +94,14 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(calc(-180px * 4 - 4rem * 3))" },
         },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         slide: "slide 15s linear infinite",
+        fadeIn: "fadeIn 0.4s ease-out forwards",
       },
     },
   },
@@ -108,7 +113,6 @@ export default {
           "@apply max-w-[77.5rem] mx-auto px-5 md:px-10 lg:px-15 xl:max-w-[87.5rem]":
             {},
         },
-        // ... (rest of the components remain the same)
       })
       addUtilities({
         ".tap-highlight-color": {

@@ -1,4 +1,5 @@
 import SectionSvg from "../assets/svg/SectionSvg";
+import useInView from "../hooks/useInView";
 
 const Section = ({
   className,
@@ -8,11 +9,17 @@ const Section = ({
   customPaddings,
   children,
 }) => {
+  const ref = useInView();
+
   return (
     <div
+      ref={ref}
       id={id}
       className={`
       relative 
+      opacity-0 translate-y-[20px]
+      motion-safe:transition-all motion-safe:duration-[400ms] motion-safe:ease-out
+      motion-reduce:opacity-100 motion-reduce:translate-y-0
       ${
         customPaddings ||
         `py-10 lg:py-16 xl:py-20 ${crosses ? "lg:py-32 xl:py-40" : ""}`
